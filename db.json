@@ -1,0 +1,10 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "Electronics",
+      "name": "Smartphone",
+      "price": 500,
+      "userId": 1
+    }]
+}
