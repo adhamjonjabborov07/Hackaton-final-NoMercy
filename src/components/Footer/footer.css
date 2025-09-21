@@ -75,3 +75,8 @@
   font-size: 14px;
   color: #444;
 }
+.link-ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
