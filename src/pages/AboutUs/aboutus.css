@@ -107,8 +107,25 @@ body.dark-mode .step-card {
   color: #eee;
 }
 
-/* Responsive */
+
 @media (max-width: 992px) {
+  .about-container {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .about-box {
+    padding: 25px;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.5rem;
+  }
+
   .about-steps {
     flex-direction: column;
     align-items: center;
@@ -121,26 +138,34 @@ body.dark-mode .step-card {
 
 @media (max-width: 768px) {
   .about-title {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .about-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .about-image img {
     max-width: 220px;
   }
+
+  .about-text {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
 }
 
 @media (max-width: 480px) {
   .about-title {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.1rem;
   }
 
   .about-text {
-    font-size: 1rem;
-    text-align: justify;
+    font-size: 0.9rem;
   }
 
   .step-card h3 {
@@ -148,6 +173,7 @@ body.dark-mode .step-card {
   }
 
   .step-card p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
+

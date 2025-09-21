@@ -124,8 +124,10 @@ body.dark-mode .buttons button[type="reset"]:hover {
   background: #444;
 }
 /* Responsive */
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 992px) {
   .report-container {
+    max-width: 90%;
     padding: 30px 15px;
   }
 
@@ -134,8 +136,26 @@ body.dark-mode .buttons button[type="reset"]:hover {
   }
 
   .report-form {
-    padding: 20px 15px;
-    gap: 12px;
+    gap: 15px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .report-title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .report-form label {
+    font-size: 0.95rem;
+  }
+
+  .report-form input,
+  .report-form select,
+  .report-form textarea {
+    font-size: 0.9rem;
+    padding: 8px;
   }
 
   .buttons {
@@ -149,13 +169,15 @@ body.dark-mode .buttons button[type="reset"]:hover {
 
 @media (max-width: 480px) {
   .report-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
-  .report-form input,
-  .report-form select,
-  .report-form textarea {
-    font-size: 0.9rem;
-    padding: 8px;
+  .report-form {
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .report-form label {
+    font-size: 0.85rem;
   }
 }

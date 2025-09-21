@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <img src={Logo} alt="I Found Logo" className="logo-img" />
+       <Link to="/"> <img src={Logo} alt="I Found Logo" className="logo-img" /></Link>
         <div className="second-logo">
           <span className="logo-text">I-Found</span>
           <small className="slogan">Search · Connect · Recover</small>
