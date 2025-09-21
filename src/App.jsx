@@ -8,6 +8,7 @@ import Lost from "./pages/Lost/Lost"
 import ReportF from "./pages/ReportF/ReportF";
 import ReportL from "./pages/ReportL/ReportL";
 import Found from "./pages/Found/Found";
+import SignUp from "./pages/Signup/signup";
 function App() {
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/ReportF' element={<Layout><ReportF/></Layout>}/>
         <Route path='/ReportL' element={<Layout><ReportL/></Layout>}/>
         <Route path='/Found' element={<Layout><Found/></Layout>}/>
+        <Route path='/SignUp' element={<Layout><SignUp/></Layout>}/>
       </Routes>
     </>
   )

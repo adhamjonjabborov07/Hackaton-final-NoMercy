@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaFacebook,
   FaTwitter,
@@ -12,20 +13,24 @@ function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logo">
-          <img
-            src={Logo}
-            alt="Lost and Found Logo"
-            className="logo"
-          />
+          <img src={Logo} alt="Lost and Found Logo" className="logo" />
         </div>
 
         <div className="footer-section">
           <h3>Site</h3>
-          <ul>
-            <li>Lost</li>
-            <li>Report Lost</li>
-            <li>Found</li>
-            <li>Report Found</li>
+          <ul className="link-ul">
+            <Link className="nav-link" to="/lost">
+              Lost
+            </Link>
+            <Link className="nav-link" to="/ReportL">
+              Report Lost
+            </Link>
+            <Link className="nav-link" to="/found">
+              Found
+            </Link>
+            <Link className="nav-link" to="/ReportF">
+              Report Found
+            </Link>
           </ul>
         </div>
 
