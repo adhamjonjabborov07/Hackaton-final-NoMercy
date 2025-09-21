@@ -38,6 +38,7 @@
   justify-content: center;
   margin: 20px 0;
 }
+
 .about-image img {
   max-width: 300px;
   border-radius: 12px;
@@ -61,13 +62,16 @@
   text-align: center;
   transition: transform 0.3s ease;
 }
+
 .step-card:hover {
   transform: translateY(-5px);
 }
+
 .step-card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
+
 .step-card p {
   font-size: 0.95rem;
   color: #555;
@@ -80,10 +84,12 @@
 body.dark-mode .about-container {
   color: #ddd;
 }
+
 body.dark-mode .about-title,
 body.dark-mode .about-subtitle {
   color: #fff;
 }
+
 body.dark-mode .step-card {
   background: #1e1e1e;
   color: #eee;

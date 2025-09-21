@@ -10,6 +10,7 @@
   z-index: 100;
   transition: background 0.3s ease;
 }
+
 body.dark-mode .header {
   background: #1e1e1e;
 }
@@ -19,17 +20,26 @@ body.dark-mode .header {
   align-items: center;
   gap: 10px;
 }
+
 .logo-img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
 }
+
+.second-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 .logo-text {
   font-size: 22px;
   font-weight: 700;
   color: #0077ff;
 }
+
 .slogan {
   font-size: 12px;
   opacity: 0.7;
@@ -40,18 +50,22 @@ body.dark-mode .header {
   display: flex;
   gap: 20px;
 }
+
 .nav-link {
   text-decoration: none;
   font-weight: 500;
   color: #444;
   transition: 0.3s;
 }
+
 .nav-link:hover {
   color: #0077ff;
 }
+
 body.dark-mode .nav-link {
   color: #ddd;
 }
+
 body.dark-mode .nav-link:hover {
   color: #66aaff;
 }
@@ -60,6 +74,7 @@ body.dark-mode .nav-link:hover {
   display: flex;
   gap: 10px;
 }
+
 .theme-btn,
 .signout-btn {
   padding: 8px 14px;
@@ -69,17 +84,21 @@ body.dark-mode .nav-link:hover {
   font-weight: 500;
   transition: 0.3s;
 }
+
 .theme-btn {
   background: #0077ff;
   color: #fff;
 }
+
 .theme-btn:hover {
   background: #005ecc;
 }
+
 .signout-btn {
   background: crimson;
   color: #fff;
 }
+
 .signout-btn:hover {
   background: darkred;
 }
