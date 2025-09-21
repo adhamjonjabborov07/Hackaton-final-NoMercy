@@ -75,6 +75,7 @@ body.dark-mode .nav-link:hover {
   gap: 10px;
 }
 
+.theme-btn,
 .signout-btn {
   padding: 8px 14px;
   border: none;
@@ -82,6 +83,18 @@ body.dark-mode .nav-link:hover {
   cursor: pointer;
   font-weight: 500;
   transition: 0.3s;
+}
+
+.theme-btn {
+  background: #0077ff;
+  color: #fff;
+}
+
+.theme-btn:hover {
+  background: #005ecc;
+}
+
+.signout-btn {
   background: crimson;
   color: #fff;
 }
