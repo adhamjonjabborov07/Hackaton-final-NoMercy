@@ -3,8 +3,8 @@ import './App.css'
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/layout";
 import Home from "./pages/Home/home";
-import Secondpage from "./pages/2pg/spg";
-import Thirdpage from "./pages/3pg/3pg";
+import AboutUs from "./pages/AboutUs/AboutUs"
+import Lost from "./pages/Lost/Lost";
 function App() {
 
 
@@ -12,8 +12,8 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Layout><Home/></Layout>}/>
-        <Route path='/Secondpage' element={<Layout><Secondpage/></Layout>}/>
-        <Route path='/Thirdpage' element={<Layout><Thirdpage/></Layout>}/>
+        <Route path='/AboutUs' element={<Layout><AboutUs/></Layout>}/>
+        <Route path='/Lost' element={<Layout><Lost/></Layout>}/>
       </Routes>
     </>
   )
