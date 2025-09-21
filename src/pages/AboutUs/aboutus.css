@@ -56,3 +56,124 @@ body.dark-mode .about-box {
 .about-image img:hover {
   transform: scale(1.05);
 }
+
+.about-steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.step-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.about-team {
+  margin-top: 50px;
+}
+
+body.dark-mode .about-container {
+  color: #ddd;
+}
+
+body.dark-mode .about-title,
+body.dark-mode .about-subtitle {
+  color: #fff;
+}
+
+body.dark-mode .step-card {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+
+@media (max-width: 992px) {
+  .about-container {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .about-box {
+    padding: 25px;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .about-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 1.7rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .about-image img {
+    max-width: 220px;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.5rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+  }
+
+  .step-card h3 {
+    font-size: 1rem;
+  }
+
+  .step-card p {
+    font-size: 0.85rem;
+  }
+}
+

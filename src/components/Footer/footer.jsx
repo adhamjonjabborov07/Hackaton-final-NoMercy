@@ -62,6 +62,12 @@ function Footer() {
               @hexsn1per_bot
             </a>
           </p>
+          <p>
+            Telegram Account System:{" "}
+            <a target="blank" href="https://t.me/lots_and_found_things_bot">
+              @lots_and_found_things_bot
+            </a>
+          </p>
           <div className="social-icons">
             <FaTwitter />
             <FaFacebook />
