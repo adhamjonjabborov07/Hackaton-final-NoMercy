@@ -59,3 +59,39 @@ body.dark-mode .lost-table th {
 body.dark-mode .lost-table td {
   border-color: #444;
 }
+/* Responsive */
+@media (max-width: 768px) {
+  .lost-container {
+    padding: 10px;
+  }
+
+  .lost-container h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .controls button {
+    width: 100%;
+  }
+
+  .lost-table th,
+  .lost-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lost-container h1 {
+    font-size: 20px;
+  }
+
+  .lost-table {
+    font-size: 0.85rem;
+  }
+}

@@ -1,21 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Lost() {
   const [search, setSearch] = useState("");
   const [sortAsc, setSortAsc] = useState(true);
+  const [items, setItems] = useState([]);
 
-  const items = [
-    { id: 1, name: "Wallet", date: "2023-12-01" },
-    { id: 2, name: "Phone", date: "2023-12-05" },
-    { id: 3, name: "Keys", date: "2023-12-03" },
-  ];
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("lostItems")) || [];
+    setItems(saved);
+  }, []);
 
   const filtered = items
     .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
     .sort((a, b) =>
-      sortAsc
-        ? a.name.localeCompare(b.name)
-        : b.name.localeCompare(a.name)
+      sortAsc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
     );
 
   return (
@@ -40,6 +38,8 @@ function Lost() {
             <th>ID</th>
             <th>Item</th>
             <th>Date</th>
+            <th>Location</th>
+            <th>Owner</th>
           </tr>
         </thead>
         <tbody>
@@ -48,6 +48,8 @@ function Lost() {
               <td>{item.id}</td>
               <td>{item.name}</td>
               <td>{item.date}</td>
+              <td>{item.location}</td>
+              <td>{item.owner}</td>
             </tr>
           ))}
         </tbody>
