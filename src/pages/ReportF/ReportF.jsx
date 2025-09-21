@@ -37,7 +37,7 @@ function ReportF() {
     localStorage.setItem("foundItems", JSON.stringify([...existing, newItem]));
 
     alert("Found item reported!");
-    navigate("/Found"); // после отправки идём на Found.jsx
+    navigate("/Found");
   };
 
   return (
@@ -60,33 +60,26 @@ function ReportF() {
 
         <label>
           Item :
-          <select
+          <input
+            type="text"
             name="item"
             value={formData.item}
             onChange={handleChange}
+            placeholder="Enter item name"
             required
-          >
-            <option value="">Select item</option>
-            <option value="Wallet">Wallet</option>
-            <option value="Phone">Phone</option>
-            <option value="Keys">Keys</option>
-            <option value="Bag">Bag</option>
-          </select>
+          />
         </label>
 
         <label>
           Location :
-          <select
+          <input
+            type="text"
             name="location"
             value={formData.location}
             onChange={handleChange}
+            placeholder="Enter location"
             required
-          >
-            <option value="">Select location</option>
-            <option value="Library">Library</option>
-            <option value="Cafeteria">Cafeteria</option>
-            <option value="Classroom">Classroom</option>
-          </select>
+          />
         </label>
 
         <label>

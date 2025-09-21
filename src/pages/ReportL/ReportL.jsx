@@ -25,7 +25,6 @@ function ReportL() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Сохраняем данные в localStorage (потом используем в Lost.jsx)
     const existing = JSON.parse(localStorage.getItem("lostItems")) || [];
     const newItem = {
       id: existing.length + 1,
@@ -38,7 +37,7 @@ function ReportL() {
     localStorage.setItem("lostItems", JSON.stringify([...existing, newItem]));
 
     alert("Lost item reported!");
-    navigate("/Lost"); // после отправки переходим на список Lost
+    navigate("/Lost");
   };
 
   return (
@@ -61,33 +60,26 @@ function ReportL() {
 
         <label>
           Item :
-          <select
+          <input
+            type="text"
             name="item"
             value={formData.item}
             onChange={handleChange}
+            placeholder="Enter item name"
             required
-          >
-            <option value="">Select item</option>
-            <option value="Wallet">Wallet</option>
-            <option value="Phone">Phone</option>
-            <option value="Keys">Keys</option>
-            <option value="Bag">Bag</option>
-          </select>
+          />
         </label>
 
         <label>
           Location :
-          <select
+          <input
+            type="text"
             name="location"
             value={formData.location}
             onChange={handleChange}
+            placeholder="Enter location"
             required
-          >
-            <option value="">Select location</option>
-            <option value="Library">Library</option>
-            <option value="Cafeteria">Cafeteria</option>
-            <option value="Classroom">Classroom</option>
-          </select>
+          />
         </label>
 
         <label>
