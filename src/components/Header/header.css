@@ -102,3 +102,32 @@ body.dark-mode .nav-link:hover {
 .signout-btn:hover {
   background: darkred;
 }
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 15px;
+  }
+
+  .logo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .auth {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .auth button {
+    width: 100%;
+  }
+}

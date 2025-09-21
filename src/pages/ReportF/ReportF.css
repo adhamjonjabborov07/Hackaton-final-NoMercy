@@ -18,7 +18,7 @@
 }
 
 .report-title span:last-child {
-  color: #007a2f; /* зелёный акцент */
+  color: #0077ff; /* синий акцент */
 }
 
 .report-form {
@@ -68,7 +68,6 @@
   justify-content: center;
   gap: 15px;
   margin-top: 10px;
-  flex-wrap: wrap; /* чтобы кнопки переносились на маленьких экранах */
 }
 
 .buttons button {
@@ -78,7 +77,6 @@
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-  min-width: 120px;
 }
 
 .buttons button[type="submit"] {
@@ -125,8 +123,7 @@ body.dark-mode .buttons button[type="reset"] {
 body.dark-mode .buttons button[type="reset"]:hover {
   background: #444;
 }
-
-/* --- Responsive --- */
+/* Responsive */
 @media (max-width: 768px) {
   .report-container {
     padding: 30px 15px;
@@ -137,13 +134,12 @@ body.dark-mode .buttons button[type="reset"]:hover {
   }
 
   .report-form {
-    padding: 20px;
-    gap: 15px;
+    padding: 20px 15px;
+    gap: 12px;
   }
 
   .buttons {
     flex-direction: column;
-    gap: 10px;
   }
 
   .buttons button {
@@ -154,10 +150,6 @@ body.dark-mode .buttons button[type="reset"]:hover {
 @media (max-width: 480px) {
   .report-title {
     font-size: 1.5rem;
-  }
-
-  .report-form label {
-    font-size: 0.9rem;
   }
 
   .report-form input,
