@@ -81,6 +81,60 @@
     gap: 5px;
 }
 
+
+
+/* ===== Footer ===== */
+.footer {
+  background: #f5f5f5;
+  padding: 40px 20px;
+  color: #222;
+  transition: 0.3s;
+}
+
+.footer h3 {
+  color: #0077ff;
+}
+
+.footer a {
+  color: #0077ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #005ecc;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ===== Dark Mode Footer ===== */
+body.dark-mode .footer {
+  background: #1e1e1e;
+  color: #ddd;
+}
+
+body.dark-mode .footer h3 {
+  color: #66aaff;
+}
+
+body.dark-mode .footer a {
+  color: #66aaff;
+}
+
+body.dark-mode .footer a:hover {
+  color: #99cfff;
+}
+
+body.dark-mode .footer-bottom {
+  color: #aaa;
+}
+
+
 /* Responsive */
 @media (max-width: 992px) {
   .footer-container {

@@ -8,6 +8,12 @@
   background: linear-gradient(90deg, #fce4ec, #f1f8e9);
   font-family: "Segoe UI", Arial, sans-serif;
   gap: 40px;
+  transition: 0.3s;
+}
+
+/* Dark mode fon */
+body.dark-mode .hero-container {
+  background: linear-gradient(90deg, #1e1e1e, #121212);
 }
 
 /* Chapdagi matn */
@@ -21,6 +27,11 @@
   line-height: 1.2;
   font-weight: bold;
   color: #111;
+  transition: 0.3s;
+}
+
+body.dark-mode .hero-text h1 {
+  color: #eee;
 }
 
 .highlight {
@@ -32,6 +43,11 @@
   font-size: 16px;
   color: #444;
   line-height: 1.6;
+  transition: 0.3s;
+}
+
+body.dark-mode .hero-subtext {
+  color: #ccc;
 }
 
 /* Tugmalar */
@@ -78,6 +94,11 @@
 .btn-found:hover {
   background: #1e8449;
   transform: translateY(-3px);
+}
+
+/* Dark mode tugmalar uchun soyalar */
+body.dark-mode .btn {
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
 }
 
 /* O‘ng tarafdagi rasmlar */

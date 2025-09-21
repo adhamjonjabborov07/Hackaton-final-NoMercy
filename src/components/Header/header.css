@@ -1,3 +1,4 @@
+/* Header asosiy */
 .header {
   display: flex;
   justify-content: space-between;
@@ -9,12 +10,14 @@
   top: 0;
   z-index: 100;
   transition: background 0.3s ease;
+  flex-wrap: wrap; /* ✅ responsivda buzilmasligi uchun */
 }
 
 body.dark-mode .header {
   background: #1e1e1e;
 }
 
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -30,7 +33,6 @@ body.dark-mode .header {
 .second-logo {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
 }
 
@@ -46,9 +48,12 @@ body.dark-mode .header {
   display: block;
 }
 
+/* Nav */
 .nav {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap; /* ✅ kichkina ekranda pastga tushib ketsin */
+  justify-content: center;
 }
 
 .nav-link {
@@ -70,9 +75,12 @@ body.dark-mode .nav-link:hover {
   color: #66aaff;
 }
 
+/* Auth */
 .auth {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap; /* ✅ tugmalar sig‘masa pastga tushsin */
+  justify-content: center;
 }
 
 .theme-btn,
@@ -102,32 +110,35 @@ body.dark-mode .nav-link:hover {
 .signout-btn:hover {
   background: darkred;
 }
-/* Responsive */
+
+/* 📱 Responsive */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    gap: 12px;
+    align-items: center;
     padding: 12px 15px;
+    gap: 15px;
   }
 
   .logo {
-    flex-direction: column;
+    flex-direction: row; /* ✅ logoni column emas row qildim */
     text-align: center;
   }
 
   .nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 12px;
+    flex-direction: row; /* ✅ menyu column emas */
+    flex-wrap: wrap;
   }
 
   .auth {
-    flex-direction: column;
+    flex-direction: row; /* ✅ buttonlar yonma-yon */
     width: 100%;
-    gap: 8px;
+    justify-content: center;
   }
 
   .auth button {
-    width: 100%;
+    flex: 1; /* ✅ tugmalar eni teng */
+    min-width: 120px;
   }
 }
