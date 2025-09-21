@@ -2,7 +2,7 @@ import React from 'react'
 
 function ReportL() {
   return (
-    <div>ReportL</div>
+    <div>ReportF</div>
   )
 }
 
