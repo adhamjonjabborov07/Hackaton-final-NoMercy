@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./ReportL.css";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ReportL() {
   const [formData, setFormData] = useState({
@@ -39,13 +41,34 @@ function ReportL() {
       description: formData.description,
       location: formData.location,
       owner: formData.name,
-      photo: photoUrl, // 📌 qo‘shildi
+      photo: photoUrl,
     };
 
     localStorage.setItem("lostItems", JSON.stringify([...existing, newItem]));
 
-    alert("Lost item reported!");
-    navigate("/Lost");
+    toast.success(" Lost item reported successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+    });
+
+    setTimeout(() => {
+      navigate("/Lost");
+    }, 1500);
+  };
+
+  const handleReset = () => {
+    setFormData({
+      name: "",
+      item: "",
+      location: "",
+      date: "",
+      description: "",
+      photo: null,
+    });
+    toast.info("Form reset!", {
+      position: "bottom-right",
+      autoClose: 2000,
+    });
   };
 
   return (
@@ -117,23 +140,13 @@ function ReportL() {
 
         <div className="buttons">
           <button type="submit">Submit</button>
-          <button
-            type="reset"
-            onClick={() =>
-              setFormData({
-                name: "",
-                item: "",
-                location: "",
-                date: "",
-                description: "",
-                photo: null,
-              })
-            }
-          >
+          <button type="reset" onClick={handleReset}>
             Reset
           </button>
         </div>
       </form>
+
+      <ToastContainer />
     </div>
   );
 }

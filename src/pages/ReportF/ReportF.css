@@ -11,14 +11,15 @@
   text-align: center;
   margin-bottom: 25px;
   color: #222;
+  line-height: 1.3;
 }
 
 .report-title span:first-child {
-  color: #b23b3b; /* красновато-коричневый */
+  color: #b23b3b; 
 }
 
 .report-title span:last-child {
-  color: #0077ff; /* синий акцент */
+  color: #0077ff;
 }
 
 .report-form {
@@ -42,7 +43,7 @@
 .report-form input,
 .report-form select,
 .report-form textarea {
-  padding: 10px;
+  padding: 12px;
   margin-top: 6px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -54,13 +55,13 @@
 .report-form select:focus,
 .report-form textarea:focus {
   border-color: #0077ff;
-  box-shadow: 0 0 5px rgba(0, 119, 255, 0.3);
+  box-shadow: 0 0 6px rgba(0, 119, 255, 0.25);
   outline: none;
 }
 
 .report-form textarea {
   resize: vertical;
-  min-height: 80px;
+  min-height: 100px;
 }
 
 .buttons {
@@ -68,14 +69,16 @@
   justify-content: center;
   gap: 15px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .buttons button {
-  padding: 10px 20px;
+  padding: 12px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
+  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
@@ -97,7 +100,7 @@
   background: #ddd;
 }
 
-/* --- Dark mode support --- */
+/* --- Dark mode --- */
 body.dark-mode .report-container {
   color: #ddd;
 }
@@ -123,21 +126,21 @@ body.dark-mode .buttons button[type="reset"] {
 body.dark-mode .buttons button[type="reset"]:hover {
   background: #444;
 }
-/* Responsive */
-/* Responsive */
+
+/* --- Responsive --- */
 @media (max-width: 992px) {
   .report-container {
     max-width: 90%;
-    padding: 30px 15px;
+    padding: 40px 15px;
   }
 
   .report-title {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .report-form {
     gap: 15px;
-    padding: 20px;
+    padding: 22px 18px;
   }
 }
 
@@ -155,11 +158,12 @@ body.dark-mode .buttons button[type="reset"]:hover {
   .report-form select,
   .report-form textarea {
     font-size: 0.9rem;
-    padding: 8px;
+    padding: 10px;
   }
 
   .buttons {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .buttons button {
@@ -168,6 +172,10 @@ body.dark-mode .buttons button[type="reset"]:hover {
 }
 
 @media (max-width: 480px) {
+  .report-container {
+    padding: 25px 12px;
+  }
+
   .report-title {
     font-size: 1.4rem;
   }
@@ -179,5 +187,17 @@ body.dark-mode .buttons button[type="reset"]:hover {
 
   .report-form label {
     font-size: 0.85rem;
+  }
+
+  .report-form input,
+  .report-form textarea,
+  .report-form select {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .buttons button {
+    font-size: 0.9rem;
+    padding: 10px;
   }
 }

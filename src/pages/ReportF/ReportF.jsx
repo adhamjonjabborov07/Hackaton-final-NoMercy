@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./ReportF.css";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ReportF() {
   const [formData, setFormData] = useState({
@@ -23,30 +25,36 @@ function ReportF() {
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const existing = JSON.parse(localStorage.getItem("foundItems")) || [];
+    const existing = JSON.parse(localStorage.getItem("foundItems")) || [];
 
-  let photoUrl = null;
-  if (formData.photo) {
-    photoUrl = URL.createObjectURL(formData.photo);
-  }
+    let photoUrl = null;
+    if (formData.photo) {
+      photoUrl = URL.createObjectURL(formData.photo);
+    }
 
-  const newItem = {
-    id: existing.length + 1,
-    name: formData.item,
-    date: formData.date,
-    description: formData.description,
-    location: formData.location,
-    finder: formData.name,
-    photo: photoUrl, // photo qo'shildi
+    const newItem = {
+      id: existing.length + 1,
+      name: formData.item,
+      date: formData.date,
+      description: formData.description,
+      location: formData.location,
+      finder: formData.name,
+      photo: photoUrl,
+    };
+
+    localStorage.setItem("foundItems", JSON.stringify([...existing, newItem]));
+
+    toast.success("✅ Found item reported successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+    });
+
+    setTimeout(() => {
+      navigate("/Found");
+    }, 1500);
   };
-
-  localStorage.setItem("foundItems", JSON.stringify([...existing, newItem]));
-
-  alert("Found item reported!");
-  navigate("/Found");
-};
 
   return (
     <div className="report-container">
@@ -56,42 +64,43 @@ function ReportF() {
 
       <form className="report-form" onSubmit={handleSubmit}>
         <label>
-          Name :
+          Your Name:
           <input
             type="text"
             name="name"
             value={formData.name}
+            placeholder="Enter your name"
             onChange={handleChange}
             required
           />
         </label>
 
         <label>
-          Item :
+          Item Name:
           <input
             type="text"
             name="item"
             value={formData.item}
-            onChange={handleChange}
             placeholder="Enter item name"
+            onChange={handleChange}
             required
           />
         </label>
 
         <label>
-          Location :
+          Location:
           <input
             type="text"
             name="location"
             value={formData.location}
-            onChange={handleChange}
             placeholder="Enter location"
+            onChange={handleChange}
             required
           />
         </label>
 
         <label>
-          Date :
+          Date Found:
           <input
             type="date"
             name="date"
@@ -102,16 +111,17 @@ function ReportF() {
         </label>
 
         <label>
-          Item Description :
+          Item Description:
           <textarea
             name="description"
+            placeholder="Write some details..."
             value={formData.description}
             onChange={handleChange}
           />
         </label>
 
         <label>
-          Upload Photo :
+          Upload Photo:
           <input type="file" name="photo" onChange={handleChange} />
         </label>
 
@@ -134,6 +144,8 @@ function ReportF() {
           </button>
         </div>
       </form>
+
+      <ToastContainer />
     </div>
   );
 }

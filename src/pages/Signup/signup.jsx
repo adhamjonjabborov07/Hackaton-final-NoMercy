@@ -11,12 +11,7 @@ function Signup() {
 
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-
-  // 1. BU YERDA CHAT ID ni O'RNATING
-  // Sizning shaxsiy Telegram chat ID raqamingizni shu yerga qo'ying.
-  // Uni @userinfobot dan olish mumkin yoki botingizga /start xabarini yuboring,
-  // keyin https://api.telegram.org/bot<BOT_TOKEN>/getUpdates orqali toping.
-  const YOUR_CHAT_ID = 'YOUR_ACTUAL_CHAT_ID_HERE'; // <--- BU YERDA O'ZGARTIRING
+  const YOUR_CHAT_ID = '1361257423'; 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,8 +19,7 @@ function Signup() {
       ...prev,
       [name]: value
     }));
-    
-    // Clear error when user starts typing
+
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -57,7 +51,7 @@ function Signup() {
       newErrors.confirmPassword = 'Passwords do not match';
     }
 
-    // Terms checkbox uchun tekshiruv (ixtiyoriy)
+    // Terms checkbox uchun tekshiruv
     const termsCheckbox = document.getElementById('terms');
     if (termsCheckbox && !termsCheckbox.checked) {
       newErrors.terms = 'You must agree to the Terms of Service and Privacy Policy';
@@ -67,7 +61,6 @@ function Signup() {
     return Object.keys(newErrors).length === 0;
   };
 
-  // 2. BACKEND SERVERGA MA'LUMOT YUBORISH UCHUN YANGI FUNKSIYA
   const sendToBackend = async (userInfo) => {
     const message = `
 🔔 *Yangi Ro'yxatdan O'tish*
@@ -78,42 +71,39 @@ function Signup() {
 ⏰ *Vaqt:* ${new Date().toLocaleString('uz-UZ')}
     `;
 
-    // 3. BACKEND SERVERINGIZNING MANZILINI BU YERGA QO'YING
-    const BACKEND_URL = 'http://localhost:3001/api/send-to-telegram'; // <--- BU YERDA O'ZGARTIRING
+    const BACKEND_URL = 'http://localhost:3001/api/send-to-telegram'; 
 
     try {
-        const response = await fetch(BACKEND_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            // Agar backendda autentifikatsiya kerak bo'lsa, header qo'shing
-          },
-          body: JSON.stringify({
-            chat_id: YOUR_CHAT_ID, // chat_id backendga yuboriladi
-            text: message,
-            parse_mode: 'Markdown'
-          }),
-        });
+      const response = await fetch(BACKEND_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: YOUR_CHAT_ID, 
+          text: message,
+          parse_mode: 'Markdown'
+        }),
+      });
 
-        if (!response.ok) {
-          const errorData = await response.json().catch(() => ({ message: response.statusText }));
-          console.error('Backenddan xato javob:', errorData);
-          throw new Error(`Server Xatolik: ${errorData.message || response.statusText}`);
-        }
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ message: response.statusText }));
+        console.error('Backenddan xato javob:', errorData);
+        throw new Error(`Server Xatolik: ${errorData.message || response.statusText}`);
+      }
 
-        const result = await response.json();
-        console.log('Backenddan muvaffaqiyatli javob:', result);
-        return result; // Backenddan javob qaytadi
+      const result = await response.json();
+      console.log('Backenddan muvaffaqiyatli javob:', result);
+      return result; 
 
     } catch (error) {
-        console.error('Backendga so\'rov yuborishda xatolik:', error);
-        // Internet yo'qligi yoki serverga bog'lanolmasligi kabi xatolar
-        if (error instanceof TypeError && error.message.includes('fetch')) {
-            alert('❌ Xatolik: Internet bog\'lanishida muammo yoki serverga bog\'lanib bo\'lmadi. Iltimos, internet aloqangizni tekshiring yoki server ishlashini tasdiqlang.');
-        } else {
-            alert(`❌ Serverga ma'lumot yuborishda xatolik yuz berdi: ${error.message}`);
-        }
-        throw error; // Xatoni qayta ishlash uchun qaytarish
+      console.error('Backendga so\'rov yuborishda xatolik:', error);
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        alert('❌ Internet yoki server bilan ulanishda muammo. Iltimos, aloqani tekshiring.');
+      } else {
+        alert(`❌ Serverga ma'lumot yuborishda xatolik: ${error.message}`);
+      }
+      throw error;
     }
   };
 
@@ -124,28 +114,21 @@ function Signup() {
       setIsLoading(true);
       
       try {
-        // Ma'lumotlarni backend serverga yuborish
         await sendToBackend(formData);
 
-        // Muvaffaqiyatli ro'yxatdan o'tish
         alert('✅ Tabriklaymiz! Siz muvaffaqiyatli ro\'yxatdan o\'tdingiz. Ma\'lumotlaringiz server orqali Telegramga yuborildi.');
 
-        // Formani tozalash
         setFormData({
           fullName: '',
           email: '',
           password: '',
           confirmPassword: ''
         });
-        // Terms checkboxni ham o'chirish (agar kerak bo'lsa)
         const termsCheckbox = document.getElementById('terms');
         if (termsCheckbox) termsCheckbox.checked = false;
 
       } catch (error) {
-        // Xatolik alertlari `sendToBackend` ichida ko'rsatiladi
         console.error('Forma yuborishda umumiy xatolik:', error);
-        // Agar yuqoridagi funksiya xatoni qaytarmasa, bu yerda ham umumiy xabar berish mumkin
-        // alert(`❌ Kutilmagan xatolik yuz berdi: ${error.message}`);
       } finally {
         setIsLoading(false);
       }
@@ -218,15 +201,10 @@ function Signup() {
           </div>
 
           <div className="form-group checkbox-group">
-            <input
-              type="checkbox"
-              id="terms"
-              name="terms"
-            />
+            <input type="checkbox" id="terms" name="terms" />
             <label htmlFor="terms">
               I agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>
             </label>
-            {/* Agar terms uchun ham xato xabari kerak bo'lsa: */}
             {errors.terms && <span className="error-message">{errors.terms}</span>}
           </div>
 
