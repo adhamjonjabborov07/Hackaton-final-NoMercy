@@ -1,32 +1,56 @@
 import React from "react";
-import "./spg.css";
+import "./aboutus.css";
 import wallet from "../AboutUs/img/wallet.jpg";
 
-function Spg() {
+function AboutUs() {
   return (
     <div className="about-container">
-      <div className="about-box">
+      <section className="about-hero" data-aos="fade-up">
         <h1 className="about-title">About Us</h1>
         <p className="about-text">
-          At <span className="highlight">Lost & Found</span>, we know how stressful it can be to lose something
-          important. Whether it’s a wallet, a phone, or a sentimental keepsake,
-          losing an item often means losing peace of mind. That’s why we built
-          this platform: to give people an easy, safe, and reliable way to
-          reconnect with their lost belongings.
+          Welcome to <span className="highlight">Lost & Found</span> — a platform built to bring people together by helping them recover what matters most. 
+          From wallets and phones to personal keepsakes, we provide a safe and simple way for lost items to be returned to their rightful owners.
+        </p>
+      </section>
+
+      <section className="about-mission" data-aos="fade-right">
+        <h2 className="about-subtitle">Our Mission</h2>
+        <p className="about-text">
+          Our mission is to create a community rooted in <span className="highlight">honesty</span> and <span className="highlight">trust</span>. 
+          We believe that every lost item deserves the chance to find its way back home, and every act of kindness makes the world a better place.
         </p>
         <div className="about-image">
           <img src={wallet} alt="Lost Wallet" />
         </div>
-        <h2 className="about-subtitle">Our Mission</h2>
+      </section>
+
+      <section className="about-how" data-aos="fade-left">
+        <h2 className="about-subtitle">How It Works</h2>
+        <div className="about-steps">
+          <div className="step-card">
+            <h3>🔍 Report Lost</h3>
+            <p>Quickly create a post with details and images of what you’ve lost.</p>
+          </div>
+          <div className="step-card">
+            <h3>📩 Report Found</h3>
+            <p>Found something? Upload information so the rightful owner can contact you.</p>
+          </div>
+          <div className="step-card">
+            <h3>🤝 Connect</h3>
+            <p>We connect finders and owners through a secure and safe system.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-team" data-aos="fade-up">
+        <h2 className="about-subtitle">Our Team</h2>
         <p className="about-text">
-          Our mission is simple — to create a community based on honesty and
-          trust, where every lost item gets a chance to find its way back home.
-          We believe that small acts of kindness, like returning a stranger’s
-          belongings, can make a big difference.
+          Behind Lost & Found is a passionate team of developers, designers, and community builders dedicated to solving real-life problems with technology. 
+          Together, we strive to make helping others easier, safer, and more rewarding.
         </p>
-      </div>
+      </section>
     </div>
   );
 }
 
-export default Spg;
+export default AboutUs;
