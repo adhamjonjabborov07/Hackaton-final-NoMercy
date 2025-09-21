@@ -230,7 +230,7 @@ function Home() {
               <div className="status-indicator found"></div>
             </div>
 
-            <div className="item-card card-pink">
+            <div className="item-card card-red">
               <div className="item-icon">
                 <img src={teddyImg} alt="Teddy Bear" />
               </div>
@@ -238,7 +238,7 @@ function Home() {
               <div className="status-indicator lost"></div>
             </div>
 
-            <div className="item-card card-black">
+            <div className="item-card card-blue">
               <div className="item-icon">
                 <img src={watchImg} alt="Watch" />
               </div>
@@ -254,7 +254,7 @@ function Home() {
               <div className="status-indicator lost"></div>
             </div>
 
-            <div className="item-card card-brown">
+            <div className="item-card card-red">
               <div className="item-icon">
                 <img src={booksImg} alt="Books" />
               </div>
@@ -262,7 +262,7 @@ function Home() {
               <div className="status-indicator found"></div>
             </div>
 
-            {/* Yangi 10 ta item */}
+            {/* Yangi 10 ta item - mavjud ranglardan foydalanilgan */}
             <div className="item-card card-green">
               <div className="item-icon">
                 <img src={footballImg} alt="Football" />
@@ -303,7 +303,7 @@ function Home() {
               <div className="status-indicator lost"></div>
             </div>
 
-            <div className="item-card card-cyan">
+            <div className="item-card card-blue">
               <div className="item-icon">
                 <img src={waterBottleImg} alt="Water Bottle" />
               </div>
@@ -311,7 +311,7 @@ function Home() {
               <div className="status-indicator found"></div>
             </div>
 
-            <div className="item-card card-brown">
+            <div className="item-card card-red">
               <div className="item-icon">
                 <img src={violinImg} alt="Violin" />
               </div>
@@ -319,7 +319,7 @@ function Home() {
               <div className="status-indicator lost"></div>
             </div>
 
-            <div className="item-card card-yellow">
+            <div className="item-card card-orange">
               <div className="item-icon">
                 <img src={capImg} alt="Cap" />
               </div>
@@ -327,7 +327,7 @@ function Home() {
               <div className="status-indicator found"></div>
             </div>
 
-            <div className="item-card card-gray">
+            <div className="item-card card-purple">
               <div className="item-icon">
                 <img src={cameraImg} alt="Camera" />
               </div>
@@ -335,7 +335,7 @@ function Home() {
               <div className="status-indicator lost"></div>
             </div>
 
-            <div className="item-card card-pink">
+            <div className="item-card card-red">
               <div className="item-icon">
                 <img src={dollImg} alt="Doll" />
               </div>
