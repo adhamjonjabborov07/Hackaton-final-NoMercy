@@ -40,6 +40,8 @@ function Found() {
             <th>Date</th>
             <th>Location</th>
             <th>Finder</th>
+            <th>Description</th>
+            <th>Photo</th>
           </tr>
         </thead>
         <tbody>
@@ -50,6 +52,18 @@ function Found() {
               <td>{item.date}</td>
               <td>{item.location}</td>
               <td>{item.finder}</td>
+              <td>{item.description || "—"}</td>
+              <td>
+                {item.photo ? (
+                  <img
+                    src={item.photo}
+                    alt={item.name}
+                    style={{ width: "80px", height: "80px", objectFit: "cover", borderRadius: "6px" }}
+                  />
+                ) : (
+                  "No photo"
+                )}
+              </td>
             </tr>
           ))}
         </tbody>

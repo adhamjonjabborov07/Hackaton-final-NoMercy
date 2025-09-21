@@ -23,22 +23,30 @@ function ReportF() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const existing = JSON.parse(localStorage.getItem("foundItems")) || [];
-    const newItem = {
-      id: existing.length + 1,
-      name: formData.item,
-      date: formData.date,
-      description: formData.description,
-      location: formData.location,
-      finder: formData.name,
-    };
-    localStorage.setItem("foundItems", JSON.stringify([...existing, newItem]));
+  const existing = JSON.parse(localStorage.getItem("foundItems")) || [];
 
-    alert("Found item reported!");
-    navigate("/Found");
+  let photoUrl = null;
+  if (formData.photo) {
+    photoUrl = URL.createObjectURL(formData.photo);
+  }
+
+  const newItem = {
+    id: existing.length + 1,
+    name: formData.item,
+    date: formData.date,
+    description: formData.description,
+    location: formData.location,
+    finder: formData.name,
+    photo: photoUrl, // photo qo'shildi
   };
+
+  localStorage.setItem("foundItems", JSON.stringify([...existing, newItem]));
+
+  alert("Found item reported!");
+  navigate("/Found");
+};
 
   return (
     <div className="report-container">

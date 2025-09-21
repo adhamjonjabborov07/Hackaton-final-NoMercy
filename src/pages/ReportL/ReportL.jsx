@@ -26,6 +26,12 @@ function ReportL() {
     e.preventDefault();
 
     const existing = JSON.parse(localStorage.getItem("lostItems")) || [];
+
+    let photoUrl = null;
+    if (formData.photo) {
+      photoUrl = URL.createObjectURL(formData.photo);
+    }
+
     const newItem = {
       id: existing.length + 1,
       name: formData.item,
@@ -33,7 +39,9 @@ function ReportL() {
       description: formData.description,
       location: formData.location,
       owner: formData.name,
+      photo: photoUrl, // 📌 qo‘shildi
     };
+
     localStorage.setItem("lostItems", JSON.stringify([...existing, newItem]));
 
     alert("Lost item reported!");
