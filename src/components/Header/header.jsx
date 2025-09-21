@@ -1,29 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./header.css"; // style yozib olishing uchun
+
 function Header() {
   return (
-    <header>
-      <div>
-        <Link to={"/"}>Home</Link>
+    <header className="header">
+      <div className="logo">
+        <img src="/logo.png" alt="I Found Logo" className="logo-img" />
+        <span className="logo-text">I-Found</span>
+        <small className="slogan">Search · Connect · Recover</small>
       </div>
 
       <nav className="nav">
-        <Link className="pages-style" to="/Secondpage">
-          SecondPage
+        <Link className="nav-link" to="/">
+          Home
         </Link>
-        <Link className="pages-style" to="/Thirdpage">
-          Thirdage
+        <Link className="nav-link" to="/lost">
+          Lost
+        </Link>
+        <Link className="nav-link" to="/report-lost">
+          Report Lost
+        </Link>
+        <Link className="nav-link" to="/found">
+          Found
+        </Link>
+        <Link className="nav-link" to="/report-found">
+          Report Found
+        </Link>
+        <Link className="nav-link" to="/profile">
+          Profile
         </Link>
       </nav>
 
-      {/* <div className="right">
-        <Link to="/login" className="btn btn-primary">
-          Sign In
-        </Link>
-        <Link to="/signUp" className="btn btn-primary">
-          Sign Up
-        </Link>
-      </div> */}
+      <div className="auth">
+        <button className="signout-btn">Sign Out</button>
+      </div>
     </header>
   );
 }
