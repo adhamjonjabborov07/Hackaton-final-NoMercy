@@ -18,13 +18,13 @@ function Header() {
         <Link className="nav-link" to="/lost">
           Lost
         </Link>
-        <Link className="nav-link" to="/report-lost">
+        <Link className="nav-link" to="/ReportL">
           Report Lost
         </Link>
         <Link className="nav-link" to="/found">
           Found
         </Link>
-        <Link className="nav-link" to="/report-found">
+        <Link className="nav-link" to="/ReportF">
           Report Found
         </Link>
         <Link className="nav-link" to="/AboutUs">
