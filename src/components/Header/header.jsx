@@ -1,18 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
 import Logo from "../Header/Group 46.png";
-
 function Header() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDark = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("dark-mode");
-  };
-
   return (
-    <header className="header" data-aos="fade-down">
+    <header className="header">
       <div className="logo">
         <img src={Logo} alt="I Found Logo" className="logo-img" />
         <div className="second-logo">
@@ -21,21 +13,30 @@ function Header() {
         </div>
       </div>
 
-      <nav className="nav" data-aos="fade-up">
-        <Link className="nav-link" to="/">Home</Link>
-        <Link className="nav-link" to="/lost">Lost</Link>
-        <Link className="nav-link" to="/ReportL">Report Lost</Link>
-        <Link className="nav-link" to="/found">Found</Link>
-        <Link className="nav-link" to="/ReportF">Report Found</Link>
-        <Link className="nav-link" to="/AboutUs">About Us</Link>
+      <nav className="nav">
+        <Link className="nav-link" to="/">
+          Home
+        </Link>
+        <Link className="nav-link" to="/lost">
+          Lost
+        </Link>
+        <Link className="nav-link" to="/ReportL">
+          Report Lost
+        </Link>
+        <Link className="nav-link" to="/found">
+          Found
+        </Link>
+        <Link className="nav-link" to="/ReportF">
+          Report Found
+        </Link>
+        <Link className="nav-link" to="/AboutUs">
+          AboutUs
+        </Link>
       </nav>
 
-      <div className="auth" data-aos="zoom-in">
+      <div className="auth">
         <button className="signout-btn">
           <Link to="/SignUp">SignUp</Link>
-        </button>
-        <button className="theme-btn" onClick={toggleDark}>
-          {darkMode ? "☀️ Light" : "🌙 Dark"}
         </button>
       </div>
     </header>
