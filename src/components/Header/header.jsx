@@ -27,8 +27,8 @@ function Header() {
         <Link className="nav-link" to="/report-found">
           Report Found
         </Link>
-        <Link className="nav-link" to="/profile">
-          Profile
+        <Link className="nav-link" to="/AboutUs">
+       AboutUs
         </Link>
       </nav>
 
