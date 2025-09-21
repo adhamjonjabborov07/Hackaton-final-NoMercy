@@ -1,42 +1,59 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./header.css"; // style yozib olishing uchun
+import wallet from "../AboutUs/img/wallet.jpg"; // поправь путь если другой
 
-function Header() {
+function AboutUs() {
   return (
-    <header className="header">
-      <div className="logo">
-        <img src="/logo.png" alt="I Found Logo" className="logo-img" />
-        <span className="logo-text">I-Found</span>
-        <small className="slogan">Search · Connect · Recover</small>
-      </div>
+    <div className="about-container">
+      <div className="about-box" data-aos="fade-up">
+        <h1 className="about-title" data-aos="zoom-in">About Us</h1>
 
-      <nav className="nav">
-        <Link className="nav-link" to="/">
-          Home
-        </Link>
-        <Link className="nav-link" to="/lost">
-          Lost
-        </Link>
-        <Link className="nav-link" to="/ReportL">
-          Report Lost
-        </Link>
-        <Link className="nav-link" to="/found">
-          Found
-        </Link>
-        <Link className="nav-link" to="/ReportF">
-          Report Found
-        </Link>
-        <Link className="nav-link" to="/AboutUs">
-       AboutUs
-        </Link>
-      </nav>
+        <p className="about-text" data-aos="fade-right">
+          Welcome to <span className="highlight">Lost & Found</span> — a platform
+          designed to reconnect people with their lost belongings. Losing
+          something valuable can be stressful, whether it’s a wallet, phone,
+          or a sentimental item.
+        </p>
 
-      <div className="auth">
-        <button className="signout-btn">Sign Out</button>
+        <div className="about-image" data-aos="flip-left">
+          <img src={wallet} alt="Lost Wallet" />
+        </div>
+
+        <h2 className="about-subtitle" data-aos="fade-left">Our Mission</h2>
+        <p className="about-text">
+          To build a trustworthy community where honesty and kindness lead the
+          way, ensuring every lost item has the chance to return home.
+        </p>
+
+        <h2 className="about-subtitle" data-aos="fade-left">Our Vision</h2>
+        <p className="about-text">
+          We imagine a world where technology and people work together to solve
+          everyday problems — like finding what you’ve lost.
+        </p>
+
+        <h2 className="about-subtitle" data-aos="fade-left">How It Works</h2>
+        <p className="about-text">
+          • Report a lost item.  
+          • Browse found items.  
+          • Report something you found.  
+        </p>
+
+        <h2 className="about-subtitle" data-aos="fade-left">Why Choose Us?</h2>
+        <p className="about-text">
+          ✅ Safe and simple  
+          ✅ Trusted community  
+          ✅ Fast search & filter  
+          ✅ Focused on kindness  
+        </p>
+
+        <h2 className="about-subtitle" data-aos="fade-left">Join Us</h2>
+        <p className="about-text">
+          Whether you’ve lost or found something, use our platform to reconnect
+          items with their owners. Small acts of kindness build a stronger
+          community.
+        </p>
       </div>
-    </header>
+    </div>
   );
 }
 
-export default Header;
+export default AboutUs;

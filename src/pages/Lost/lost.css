@@ -1,0 +1,61 @@
+.lost-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+}
+.lost-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #0077ff;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.controls input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+.controls input:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+.controls button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #0077ff;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.controls button:hover {
+  background: #005ecc;
+}
+
+.lost-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.lost-table th,
+.lost-table td {
+  padding: 14px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+.lost-table th {
+  background: #f5f5f5;
+}
+body.dark-mode .lost-table th {
+  background: #2a2a2a;
+}
+body.dark-mode .lost-table td {
+  border-color: #444;
+}

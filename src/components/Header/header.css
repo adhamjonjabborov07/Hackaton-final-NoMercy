@@ -1,68 +1,85 @@
-/* Header umumiy joylashuv */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 40px;
-  background: linear-gradient(to right, #fffef5, #f8fff0);
-  border-bottom: 1px solid #ddd;
-  font-family: Arial, sans-serif;
+  padding: 15px 30px;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+body.dark-mode .header {
+  background: #1e1e1e;
 }
 
-/* Logo qismi */
 .logo {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  gap: 10px;
 }
-
 .logo-img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: -5px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
 }
-
 .logo-text {
-  font-size: 18px;
-  font-weight: bold;
-  color: #222;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0077ff;
 }
-
 .slogan {
   font-size: 12px;
-  color: #666;
-  margin-top: -2px;
+  opacity: 0.7;
+  display: block;
 }
 
-/* Nav linklar */
 .nav {
   display: flex;
   gap: 20px;
 }
-
 .nav-link {
   text-decoration: none;
-  color: #000;
-  font-size: 15px;
+  font-weight: 500;
+  color: #444;
   transition: 0.3s;
 }
-
 .nav-link:hover {
-  color: #ff4b2b;
+  color: #0077ff;
+}
+body.dark-mode .nav-link {
+  color: #ddd;
+}
+body.dark-mode .nav-link:hover {
+  color: #66aaff;
 }
 
-/* Sign Out tugma */
-.auth .signout-btn {
-  padding: 6px 14px;
-  border: 1px solid #bbb;
+.auth {
+  display: flex;
+  gap: 10px;
+}
+.theme-btn,
+.signout-btn {
+  padding: 8px 14px;
+  border: none;
   border-radius: 6px;
-  background: #f7f7f7;
   cursor: pointer;
+  font-weight: 500;
   transition: 0.3s;
 }
-
-.auth .signout-btn:hover {
-  background: #ff4b2b;
+.theme-btn {
+  background: #0077ff;
   color: #fff;
-  border-color: #ff4b2b;
+}
+.theme-btn:hover {
+  background: #005ecc;
+}
+.signout-btn {
+  background: crimson;
+  color: #fff;
+}
+.signout-btn:hover {
+  background: darkred;
 }
